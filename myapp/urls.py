@@ -19,7 +19,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf import settings
+import os
 # myproject/urls.py
+
+# Import BASE_DIR from settings if not already imported
+BASE_DIR = settings.BASE_DIR
 
 handler404 = 'myapp.views.custom_404_view'
 
@@ -32,6 +37,5 @@ urlpatterns = [
 
 # if settings.DEBUG:
 #     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, "static"))
