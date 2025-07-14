@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MySite{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Common Navbar -->
+        <h1>Welcome to MySite</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Child templates inject content here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Common Footer -->
+        <p>© 2025 MySite</p>
+    </footer>
+</body>
+</html>
